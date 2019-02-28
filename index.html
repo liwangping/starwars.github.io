@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>星球大战</title>
+    <style>
+        *{     /*css reset 样式重置*/
+            margin: 0;
+            padding: 0;
+        }/*  *选择所有元素*/
+        body{
+            background: url(./images/bg.jpg);
+            background-color: #000000;
+        }
+        .starwars-demo{
+            height: 17em;
+            width: 34em;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+             /* background: red;  */
+            transform: translate(-50%,-50%);/*向左移自身高度的一半，向上移自身高度的一半，一定居中，因为是父元素body的一半*/
+            perspective:800px;/*透视属性*/
+            transform-style:preserve-3d;
+            
+        }
+        .star,.wars{
+            position: absolute;
+        }
+        .star{
+            top: -0.75em;/*向上移0.75*/
+            animation: star 10s ease-out/*动作属性给star加一个动作,时间为10s,ease-out为变速*/
+            infinite;/*重复效果*/
+        }
+        
+        @keyframes star{/*关键帧*/
+            0%{
+              opacity: 0;/*透明度为0*/
+              transform: scale(1.5);/*变形属性,放大1.5倍,在开始的时候*/
+            }
+            20%{
+                opacity: 1;
+            }
+            89%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+                transform: translateZ(-400em);/*往z负轴快速平移*/
+            }
+        }
+
+        
+
+        .wars{
+        bottom: -0.5em;
+        animation: wars 10s ease-out
+        infinite;
+        }
+
+        @keyframes wars{
+            0%{
+              opacity: 0;/*透明度为0*/
+              transform: scale(1.5);/*变形属性,放大1.5倍,在开始的时候*/
+            }
+            20%{
+                opacity: 1;
+            }
+            90%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+                transform: translateZ(-400em);/*往z负轴快速平移*/
+            }
+        }
+    </style>
+</head> 
+<body>
+  <div class="starwars-demo">
+        <img src="./images/star.svg" alt="" class="star">
+        <img src="./images/wars.svg" alt="" class="wars">
+       
+        <!-- <img src="./images/.svg" alt="" class="star">
+        <img src="./images/.svg" alt="" class="star"> -->
+     
+        <!-- <h2 class="byline">
+            <span>T</span>
+            <span>h</span>
+            <span>e</span>
+            <span>F</span>
+            <span>o</span>
+            <span>r</span>
+            <span>c</span>
+            <span>e</span>
+            <span>A</span>
+            <span>W</span>
+            <span>a</span>
+            <span>k</span>
+            <span>e</span>
+            <span>n</span>
+        </h2> -->
+  </div>  
+</body>
+</html>
